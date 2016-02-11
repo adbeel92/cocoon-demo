@@ -1,0 +1,7 @@
+Collaborator DNI: <%= f.text_field :dni %>
+<div class="field">
+	<%= f.fields_for :children_relationships do |children_relationship| %>
+	  <%= render 'children_relationship_fields', f: children_relationship %>
+	<% end %>
+	<%= link_to_add_association 'Add relationship', f, :children_relationships, wrap_object: Proc.new {|children_relationship| children_relationship.build_person; children_relationship } %>
+</div>

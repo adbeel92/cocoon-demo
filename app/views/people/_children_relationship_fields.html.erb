@@ -1,0 +1,6 @@
+<div class="field">
+	Relationship <%= f.text_field :rel_type %>
+	<%= f.fields_for :person do |person| %>
+		<%= render 'person_fields', person: person%>
+	<% end %>
+</div>
